@@ -1,0 +1,254 @@
+/* TYPEFACES */
+
+@font-face {
+  font-family: "Poppins-Regular";
+  src: url("./assets/fonts/Poppins/Poppins-Regular.ttf");
+  src: url("./assets/fonts/Poppins/Poppins-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Poppins-Medium";
+  src: url("./assets/fonts/Poppins/Poppins-Medium.ttf");
+  src: url("./assets/fonts/Poppins/Poppins-Medium.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Poppins-SemiBold";
+  src: url("./assets/fonts/Poppins/Poppins-SemiBold.ttf");
+  src: url("./assets/fonts/Poppins/Poppins-SemiBold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Poppins-Bold";
+  src: url("./assets/fonts/Poppins/Poppins-Bold.ttf");
+  src: url("./assets/fonts/Poppins/Poppins-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Inter-Regular";
+  src: url("./assets/fonts/Inter/Inter-Regular.ttf");
+  src: url("./assets/fonts/Inter/Inter-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Inter-Medium";
+  src: url("./assets/fonts/Inter/Inter-Medium.ttf");
+  src: url("./assets/fonts/Inter/Inter-Medium.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Inter-SemiBold";
+  src: url("./assets/fonts/Inter/Inter-SemiBold.ttf");
+  src: url("./assets/fonts/Inter/Inter-SemiBold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Inter-Bold";
+  src: url("./assets/fonts/Inter/Inter-Bold.ttf");
+  src: url("./assets/fonts/Inter/Inter-Bold.ttf") format("truetype");
+}
+
+:root {
+  /* Fonts */
+  --ff-h1-primary: "Poppins-Bold", serif;
+  --ff-h2-secondary: "Inter-Bold", serif;
+  --ff-h3-primary: "Poppins-SemiBold", serif;
+  --ff-h4-secondary: "Inter-Bold", serif;
+  --ff-h5-primary: "Poppins-Medium", serif;
+  --ff-h6-primary: "Inter-Medium", serif;
+  --ff-subtitle: "Inter-Regular", serif;
+  --ff-paragraph: "Poppins-Regular", serif;
+
+  /* Colors */
+  --hex-primary-100: #473f7a;
+  --hex-primary-200: #6d64bc;
+  --hex-primary-300: #241d3b;
+  --hex-primary-400: #0b0b13;
+  --hex-primary-500: #7c74a3;
+  --hex-secondary-100: #ffffff;
+  --hex-secondary-200: #bcbcbc;
+  --hex-secondary-300: #949494;
+  --hex-secondary-400: #7a7a7a;
+  --hex-secondary-500: #545454;
+  --hex-review-000: #fcd334;
+
+  /* Spacing */
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-16: 16px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --space-40: 40px;
+  --space-48: 48px;
+  --space-56: 56px;
+  --space-80: 80px;
+  --space-96: 96px;
+  --space-120: 120px;
+  --space-200: 200px;
+}
+
+/* UTILITIES */
+
+/* Text Hierarchy */
+
+.heading-one {
+  font-family: var(--ff-h1-primary);
+  font-size: 64px;
+  line-height: 120%;
+  color: var(--hex-primary-400);
+}
+
+.heading-two {
+  font-family: var(--ff-h2-secondary);
+  font-size: 48px;
+  line-height: 120%;
+  color: var(--hex-primary-400);
+}
+
+.heading-three {
+  font-family: var(--ff-h3-primary);
+  font-size: 36px;
+  line-height: 120%;
+  color: var(--hex-primary-400);
+}
+
+.heading-four {
+  font-family: var(--ff-h4-secondary);
+  font-size: 24px;
+  line-height: 120%;
+  color: var(--hex-primary-400);
+}
+
+.heading-five {
+  font-family: var(--ff-h5-primary);
+  font-size: 20px;
+  line-height: 120%;
+  color: var(--hex-primary-400);
+}
+
+.heading-six {
+  font-family: var(--ff-h6-primary);
+  font-size: 16px;
+  line-height: 120%;
+  color: var(--hex-primary-400);
+}
+
+.subtitle {
+  font-family: var(--ff-subtitle);
+  font-size: 20px;
+  line-height: 120%;
+  color: var(--hex-primary-400);
+}
+
+.paragraph {
+  font-family: var(--ff-paragraph);
+  font-size: 20px;
+  line-height: 160%;
+  color: var(--hex-primary-400);
+}
+
+.b-one {
+  font-family: var(--ff-paragraph);
+  font-size: 16px;
+  line-height: 160%;
+  color: var(--hex-primary-400);
+}
+
+.b-two {
+  font-family: var(--ff-paragraph);
+  font-size: 18px;
+  line-height: 160%;
+  color: var(--hex-primary-400);
+}
+
+/* buttons */
+.cta-violet {
+  transition: background-color 200ms ease-in-out, color 200ms ease-in-out;
+  font-family: var(--ff-h2-secondary);
+  text-transform: uppercase;
+  color: var(--hex-secondary-100);
+  font-size: clamp(1rem, 1vw, 1rem);
+  background-color: var(--hex-primary-200);
+  letter-spacing: 1px;
+  padding: 0.8rem 2rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}
+
+.cta-violet:hover,
+.cta-violet:active {
+  background-color: var(--hex-secondary-100);
+  color: var(--hex-primary-200);
+  border: 1px solid var(--hex-primary-200);
+}
+
+.cta-white {
+  transition: background-color 200ms ease-in-out, color 200ms ease-in-out;
+  font-family: var(--ff-h2-secondary);
+  text-transform: uppercase;
+  color: var(--hex-primary-200);
+  font-size: clamp(1rem, 1vw, 1rem);
+  background-color: var(--hex-secondary-100);
+  letter-spacing: 1.1px;
+  padding: 0.8rem 3.2rem;
+  cursor: pointer;
+  border: 1px solid var(--hex-primary-200);
+  border-radius: 10px;
+  outline: none;
+}
+
+.cta-white:hover,
+.cta-white:active {
+  background-color: var(--hex-primary-200);
+  color: var(--hex-secondary-100);
+}
+
+.cta-text_black {
+  transition: background-color 200ms ease-in-out, color 200ms ease-in-out;
+  font-family: var(--ff-h2-secondary);
+  text-transform: uppercase;
+  color: var(--hex-primary-400);
+  font-size: clamp(0.7rem, 1vw, 1rem);
+  background-color: var(--hex-secondary-100);
+  letter-spacing: 1px;
+  padding: 0.8rem 2rem;
+  cursor: pointer;
+  border: 1px solid var(--hex-primary-400);
+  border-radius: 5px;
+  outline: none;
+}
+
+.cta-text_black:hover,
+.cta-text_black:active {
+  background-color: var(--hex-primary-400);
+  color: var(--hex-secondary-100);
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+/* anchor tag */
+.anchor-violet {
+  transition: color 400ms ease-in-out;
+  color: var(--hex-primary-100);
+  border: none;
+  outline: none;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+.anchor-violet:hover,
+.anchor-violet:active {
+  color: var(--hex-primary-200);
+}
+
+.anchor-white {
+  transition: color 400ms ease-in-out;
+  color: var(--hex-secondary-100);
+  border: none;
+  outline: none;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+.anchor-white:hover,
+.anchor-white:active {
+  color: var(--hex-secondary-500);
+}

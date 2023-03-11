@@ -1,0 +1,131 @@
+@import "../../style.scss";
+
+.rightBar {
+  @include themify($themes) {
+    flex: 4;
+    position: sticky;
+    top: 70px;
+    height: calc(100vh - 70px);
+    overflow: scroll;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    color: themed("textColor");
+    background-color: themed("bgSoft");
+
+    @include mobile {
+      display: none;
+    }
+
+    @include tablet {
+      display: none;
+    }
+
+    .container {
+      padding: 20px;
+      background-color: themed("bgSoft");
+      .item {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        padding: 20px;
+        margin-bottom: 20px;
+        background-color: themed("bg");
+
+        span {
+          font-family: var(--ff-subtitle);
+          font-size: 12px;
+          padding: 5px;
+        }
+        .user {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin: 20px 0px;
+          gap: 20px;
+          .userInfo {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            position: relative;
+            img {
+              width: 40px;
+              height: 40px;
+              border-radius: 50%;
+              object-fit: cover;
+            }
+
+            .online {
+              width: 12px;
+              height: 12px;
+              border-radius: 50%;
+              background-color: limegreen;
+              position: absolute;
+              top: 0;
+              left: 30px;
+            }
+
+            span {
+              font-weight: 500;
+              font-size: 14px;
+              font-family: var(--ff-h4-secondary);
+            }
+
+            p {
+              font-family: var(--ff-subtitle);
+              font-size: 12px;
+            }
+          }
+          .buttons {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            button {
+              &:first-child {
+                transition: background-color 200ms ease-in-out,
+                  color 200ms ease-in-out;
+                font-family: var(--ff-h2-secondary);
+                font-size: 12px;
+                text-transform: uppercase;
+                color: var(--hex-secondary-100);
+                background-color: var(--hex-primary-200);
+                letter-spacing: 1px;
+                padding: 10px;
+                cursor: pointer;
+                border-radius: 3px;
+                border: none;
+                outline: none;
+              }
+              &:last-child {
+                transition: background-color 200ms ease-in-out,
+                  color 200ms ease-in-out;
+                font-family: var(--ff-h2-secondary);
+                font-size: 12px;
+                text-transform: uppercase;
+                color: var(--hex-primary-200);
+                background-color: var(--hex-secondary-100);
+                letter-spacing: 1px;
+                padding: 10px;
+                cursor: pointer;
+                border-radius: 3px;
+                border: 1px solid var(--hex-primary-200);
+                outline: none;
+              }
+            }
+
+            button:hover,
+            button:active {
+              &:first-child {
+                background-color: var(--hex-secondary-100);
+                color: var(--hex-primary-200);
+                border: 1px solid var(--hex-primary-200);
+              }
+              &:last-child {
+                background-color: var(--hex-primary-200);
+                color: var(--hex-secondary-100);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

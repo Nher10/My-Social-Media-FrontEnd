@@ -1,0 +1,154 @@
+@import '../../style.scss';
+
+.login {
+  height: 100vh;
+  background-color: rgb(117, 110, 252);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  
+  .card {
+    width: 50%;
+    display: flex;
+    background-color: #ffffff;
+    border-radius: 10px;
+    min-height: 600px;
+    overflow: hidden;
+@include mobile {
+    flex-direction: column;
+    height: 90%;
+    width: 90%;
+  }
+
+    .left {
+      flex: 1;
+      background: linear-gradient(rgba(39, 11, 96, 0.5), rgba(39, 11, 95, 0.5)),
+        url("../../assets/images/pexels-armin-rimoldi-5553094.jpg") center;
+      background-size: cover;
+      padding: 50px;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      color: white;
+
+      @include mobile {
+       padding: 30px;
+       min-height: 50%;
+      }
+
+      h1 {
+        font-family: var(--ff-h1-primary);
+        font-size: 100px;
+        line-height: var(--space-96);
+
+        @include mobile {
+          font-size: 30px;
+          line-height: 30px;
+        }
+      }
+      p {
+        font-family: var(--ff-paragraph);
+        font-size: var(--space-24);
+
+        @include mobile {
+          font-size: 15px;
+        }
+      }
+      span {
+        font-family: var(--ff-subtitle);
+        font-size: var(--space-16);
+
+        @include mobile {
+          font-size: 14px;
+        }
+      }
+      button {
+        transition: background-color 200ms ease-in-out, color 200ms ease-in-out;
+        font-family: var(--ff-h2-secondary);
+        text-transform: uppercase;
+        color: var(--hex-primary-200);
+        font-size: clamp(1rem, 1vw, 1rem);
+        background-color: var(--hex-secondary-100);
+        letter-spacing: 1.1px;
+        padding: 0.8rem 0rem;
+        cursor: pointer;
+        border: 1px solid var(--hex-primary-200);
+        outline: none;
+        width: 50%;
+
+
+        @include mobile {
+          font-size: 12px;
+          letter-spacing: 1.1px;
+        }
+      }
+      button:hover,
+      button:active {
+        background-color: var(--hex-primary-200);
+        color: var(--hex-secondary-100);
+      }
+    }
+    .right {
+      flex: 1;
+      padding: 50px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 50px;
+
+      @include mobile {
+        padding: 30px;
+        min-height: 50%;
+       }
+      h1 {
+        font-family: var(--ff-h1-primary);
+        color: var(--hex-secondary-500);
+
+        @include mobile {
+          font-size: 30px;
+         }
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        input {
+          border: none;
+          border-bottom: 1px solid var(--hex-secondary-200);
+          padding: 20px 10px;
+        }
+        input:hover {
+          border-bottom-color: var(--hex-secondary-300);
+        }
+
+        input:focus {
+          border-bottom-color: var(--hex-primary-500);
+          outline: none;
+        }
+        button {
+          transition: background-color 200ms ease-in-out,
+            color 200ms ease-in-out;
+          font-family: var(--ff-h2-secondary);
+          text-transform: uppercase;
+          color: var(--hex-secondary-100);
+          font-size: clamp(0.7rem, 1vw, 1rem);
+          background-color: var(--hex-primary-200);
+          letter-spacing: 1px;
+          padding: 0.8rem 2rem;
+          cursor: pointer;
+          border: none;
+          outline: none;
+          width: 50%;
+        }
+
+        button:hover,
+        button:active {
+          background-color: var(--hex-secondary-100);
+          color: var(--hex-primary-200);
+          border: 1px solid var(--hex-primary-200);
+        }
+      }
+    }
+  }
+}

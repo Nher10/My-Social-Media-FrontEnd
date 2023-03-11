@@ -1,0 +1,139 @@
+@import "../../style.scss";
+
+.profile {
+  @include themify($themes) {
+    background-color: themed("bgSoft");
+    position: sticky;
+    top: 70px;
+    height: calc(100vh - 70px);
+    overflow: scroll;
+
+    .images {
+      width: 100%;
+      height: 300px;
+      position: relative;
+      .cover {
+        width: 100%;
+        height: 100%;
+      }
+      .profilePic {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        object-fit: cover;
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: auto;
+        top: 200px;
+      }
+    }
+    .profileContainer {
+      padding: 20px 40px;
+
+      @include mobile {
+        padding: 10px;
+      }
+
+      @include tablet {
+        padding: 20px;
+      }
+      .uInfo {
+        height: 280px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        border-radius: 20px;
+        background-color: themed("bg");
+        color: themed("textColor");
+        padding: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+
+        @include mobile {
+          flex-direction: column;
+          height: 30vh;
+          padding: 20px;
+          margin-top: 100px;
+        }
+
+        @include tablet {
+          flex-direction: column;
+          height: 25vh;
+          padding: 20px;
+          margin-top: 100px;
+        }
+
+        .left {
+          flex: 1;
+          flex-wrap: wrap;
+          display: flex;
+          gap: 10px;
+
+          a {
+            color: themed("textColorSoft");
+          }
+        }
+        .center {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 10px;
+
+          span {
+            font-size: 25px;
+            font-weight: 500;
+            font-family: var(--ff-h2-secondary);
+          }
+
+          .info {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+
+            .item {
+              display: flex;
+              align-items: center;
+              gap: 5px;
+              color: themed("textColorSoft");
+              span {
+                font-size: 12px;
+              }
+            }
+          }
+          button {
+            transition: background-color 200ms ease-in-out,
+              color 200ms ease-in-out;
+            font-family: var(--ff-h2-secondary);
+            font-size: 12px;
+            text-transform: uppercase;
+            color: var(--hex-secondary-100);
+            background-color: var(--hex-primary-200);
+            letter-spacing: 1px;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 3px;
+            border: none;
+            outline: none;
+          }
+
+          button:hover,
+          button:active {
+            background-color: var(--hex-secondary-100);
+            color: var(--hex-primary-200);
+            border: 1px solid var(--hex-primary-200);
+          }
+        }
+        .right {
+          flex: 1;
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+          gap: 10px;
+        }
+      }
+    }
+  }
+}

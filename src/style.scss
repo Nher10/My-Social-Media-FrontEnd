@@ -1,0 +1,63 @@
+*,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: themed("bgSoft");
+}
+::-webkit-scrollbar {
+  display: none;
+}
+
+$themes: (
+  light: (
+    textColor: var(--hex-primary-400),
+    bg: var(--hex-secondary-100),
+    logo: var(--hex-primary-100),
+    bgSoft: var(--hex-secondary-200),
+    textColorSoft: var(--hex-secondary-500),
+    border: var(--hex-secondary-200),
+  ),
+  dark: (
+    textColor: var(--hex-secondary-100),
+    bg: var(--hex-primary-400),
+    logo: var(--hex-secondary-100),
+    bgSoft: var(--hex-primary-200),
+    textColorSoft: var(--hex-secondary-200),
+    border: var(--hex-primary-300),
+  ),
+);
+
+@mixin themify($themes) {
+  @each $theme, $map in $themes {
+    .theme-#{$theme} & {
+      $theme-map: () !global;
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes, $theme), "#{$key}");
+        $theme-map: map-merge(
+          $theme-map,
+          (
+            $key: $value,
+          )
+        ) !global;
+      }
+      @content;
+      $theme-map: null !global;
+    }
+  }
+}
+@function themed($key) {
+  @return map-get($theme-map, $key);
+}
+
+@mixin mobile {
+  @media (max-width: 480px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: 960px) {
+    @content;
+  }
+}
